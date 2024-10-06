@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gn&3vuy(13h%x$qzky(wg9w))qbxo%2okrwt7*_nt5t)5wqe48'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -51,7 +51,9 @@ EMAIL_USE_TLS = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'localhost:3000'
+    'localhost:3000',
+    '*',
+    'https://meeting-app-1027673214842.us-central1.run.app'
 ]
 
 STATIC_URL = '/static/'
@@ -190,14 +192,15 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000',]
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000','https://meeting-app-1027673214842.us-central1.run.app']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000',]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000','https://meeting-app-1027673214842.us-central1.run.app']
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+    'http://localhost:3000',' https://meeting-app-1027673214842.us-central1.run.app'
 ]
 
 CORS_ALLOW_METHODS = [
